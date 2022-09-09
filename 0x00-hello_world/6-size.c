@@ -1,9 +1,8 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- *
- * Return: 0 number
+ * main - the containing func
+ * Return: 0 if no error
  */
 int main(void)
 {
