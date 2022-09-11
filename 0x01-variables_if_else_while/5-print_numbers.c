@@ -5,13 +5,13 @@
  * main - Entry point
  *
  * Return: Always 0 (Success)
- **/
+ */
 int main(void)
 {
-	char Alphabet;
+	int i;
 
-	for (Alphabet = 'a'; Alphabet <= 'z'; Alphabet++)
-		putchar(Alphabet);
-	putchar('\n');
+	for (i = 0; i < 10; i++)
+		printf("%d", i);
+	printf("\n");
 	return (0);
-}}
+}
