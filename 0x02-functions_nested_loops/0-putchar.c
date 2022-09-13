@@ -1,14 +1,21 @@
-#include <unistd>
-
+#include "main.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - main function
  *
- * Return: On success l.
- * On error, -l is returned, and errno is set appropriately.
+ * Return: End program
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(, &c, l));
-}
+	char string[8] = "_putchar";
+	int n = 0;
 
+	while (n < 8)
+	{
+		_putchar(string[n]);
+		++n;
+	}
+
+	_putchar(10);
+	return (0);
+
+}
