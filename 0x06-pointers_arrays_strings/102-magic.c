@@ -1,9 +1,5 @@
 #include <stdio.h>
-/**
- * main - principal function
- *
- *Return: end the program
- */
+
 int main(void)
 {
 	int n;
