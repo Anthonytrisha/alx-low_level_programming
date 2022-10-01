@@ -1,1 +1,1 @@
-My first C - Static libraries project
+static libraries
