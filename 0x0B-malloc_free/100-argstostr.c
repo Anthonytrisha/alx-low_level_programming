@@ -1,57 +1,37 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+
 /**
- * argstostr - concatenates all arguments of your program
+ * argstostr - Concatenates all arguements
+ * @ac: Number of arguments
+ * @av: The arguments themselves
  *
- * @ac: int
- * @av: int
- * Return: char pointer
+ * Return: Pointer to the concatenated string
+ *
  */
+
 char *argstostr(int ac, char **av)
 {
-	char *s;
-	int i;
-	int j;
-	int k;
-	int size;
+	char *str;
+	int i, j;
+	int len, total, n = 0;
 
-	size = 0;
-	if (ac == 0 || av == NULL)
+	if ((ac == 0) || (av == NULL))
 		return (NULL);
-
-	i = 0;
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
-		j = 0;
-		while (av[i][j] != '\0')
-		{
-			size++;
-			j++;
-		}
-		i++;
+		for (j = 0; av[i][j] != '\0'; j++)
+			len++;
 	}
-	size = size + ac + 1;
-
-	s = malloc(size * sizeof(char));
-	if (s == 0)
-		return (0);
-	
-	k = 0;
-	i = 0;
-	while (i < ac)
+	total = len + ac + 1;
+	str = (char *)malloc(total * sizeof(char));
+	for (i = 0; i < ac; i++)
 	{
-		j = 0;
-		while (av[i][j] != '\0')
-		{
-			s[k] = av[i][j];
-			j++;
-			k++;
-		}
-		s[k] = '\n';
-		k++;
-		i++;
+		for (j = 0; av[i][j] != '\0'; j++, n++)
+			str[n] = av[i][j];
+		str[n] = '\n';
+		n++;
 	}
-	s[k] = '\0';
-	return (s);
+	str[n] = '\0';
+	return (str);
 }
