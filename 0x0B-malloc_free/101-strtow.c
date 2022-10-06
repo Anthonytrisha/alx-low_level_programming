@@ -59,6 +59,7 @@ char **strtow(char *str)
 		flag_word = 0;
 		while (str[i] == ' ')
 			i++;
+		word_width = 0;
 		while (str[i + word_width] >= 33 && str[i + word_width] <= 126)
 		{
 			word_width++;
