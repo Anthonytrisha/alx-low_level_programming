@@ -1,15 +1,18 @@
-SECTION .data
-msg:	db "Hello, Holberton", 0
-fmt:	db "%s", 10, 0
+section .rodata
+	format: db 'Hello, %s', 10, 0
+	msg1:   db 'Holberton', 0
 
-	SECTION .text
+section .text
 	extern printf
 	global main
+
 main:
-	mov esi, msg
-	mov edi, fmt
-	mov eax, 0
+
+        mov rdi, format
+        mov rsi, msg1
+        
+	mov rax, 0
 	call printf
 
-	mov eax, 0
+	mov rax, 0
 	ret
